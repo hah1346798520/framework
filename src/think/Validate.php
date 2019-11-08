@@ -1075,11 +1075,8 @@ class Validate
             [$width, $height, $type] = getimagesize($file->getRealPath());
 
             if (isset($rule[2])) {
-                $imageType = strtolower($rule[2]);
-
-                if ('jpeg' == $imageType) {
-                    $imageType = 'jpg';
-                }
+                $imageType = strtolower($rule[2])
+                
 
                 if (image_type_to_extension($type, false) != $imageType) {
                     return false;
